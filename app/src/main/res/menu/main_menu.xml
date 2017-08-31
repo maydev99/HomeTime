@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/set_time"
+        android:title="Set Time"
+        android:orderInCategory="5"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_check_white_24dp">
+
+    </item>
+
+
+    <item
+        android:id="@+id/about"
+        android:title="About"
+        android:orderInCategory="10"
+        app:showAsAction="never">
+
+    </item>
+
+</menu>
