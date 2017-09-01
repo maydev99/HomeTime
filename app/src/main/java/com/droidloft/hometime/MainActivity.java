@@ -33,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
 
         getTheTime();
 
+        loadPrefs();
+
+        int startHour = deviceHour + hoursDiff;
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            timePicker.setHour(startHour);
+        }
+
 
     }
 

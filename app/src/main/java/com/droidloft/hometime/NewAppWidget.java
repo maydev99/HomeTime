@@ -25,10 +25,18 @@ public class NewAppWidget extends AppWidgetProvider {
         Calendar cal = Calendar.getInstance();
         int currentHour = cal.get(Calendar.HOUR);
         int currentMinute = cal.get(Calendar.MINUTE);
-        //int currentAmPm = cal.get(Calendar.AM_PM);
+        int currentAmPm = cal.get(Calendar.AM_PM);
         int homeTimeHour = currentHour + hoursDiff;
 
-        String homeTime = homeTimeHour + ":" + currentMinute;
+        String ampmStr;
+
+        if(currentAmPm == 1){
+            ampmStr = "PM";
+        } else {
+            ampmStr = "AM";
+        }
+
+        String homeTime = homeTimeHour + ":" + currentMinute + " " + ampmStr;
 
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
         views.setTextViewText(R.id.timeTextView, homeTime);
@@ -39,6 +47,8 @@ public class NewAppWidget extends AppWidgetProvider {
 
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
         views.setOnClickPendingIntent(R.id.widget_container, pendingIntent);
+
+
 
         appWidgetManager.updateAppWidget(appWidgetId, views);
 
@@ -56,10 +66,18 @@ public class NewAppWidget extends AppWidgetProvider {
         Calendar cal = Calendar.getInstance();
         int currentHour = cal.get(Calendar.HOUR);
         int currentMinute = cal.get(Calendar.MINUTE);
-        //int currentAmPm = cal.get(Calendar.AM_PM);
+        int currentAmPm = cal.get(Calendar.AM_PM);
         int homeTimeHour = currentHour + hoursDiff;
 
-        String homeTime = homeTimeHour + ":" + currentMinute;
+        String ampmStr;
+
+        if(currentAmPm == 1){
+            ampmStr = "PM";
+        } else {
+            ampmStr = "AM";
+        }
+
+        String homeTime = homeTimeHour + ":" + currentMinute + " " + ampmStr;
 
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
         views.setTextViewText(R.id.timeTextView, homeTime);
